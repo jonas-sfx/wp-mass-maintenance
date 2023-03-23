@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Test",
+        "host": "www.test.com",
+        "php": "/opt/plesk/php/7.4/bin/php",
+        "webroot": "/var/www/vhosts/test.com/httpdocs",
+        "wpcli": "/usr/local/bin/wp"
+    },
+    {
+        "name": "Example",
+        "host": "example.net",
+        "php": "/usr/local/php7.4/bin/php",
+        "webroot": "/home/site123/www.example.net",
+        "wpcli": "/home/site123/bin/wp"
+    },
+    {
+        "name": "Demo",
+        "host": "demo.myhoster.net",
+        "php": "/usr/bin/php81",
+        "webroot": "/kunden/0815_4711/websites/demo.org",
+        "wpcli": "/kunden/0815_4711/.local/bin/wp-cli.phar"
+    }
+]
