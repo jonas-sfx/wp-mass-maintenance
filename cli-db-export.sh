@@ -16,6 +16,6 @@ for row in $(jq -r '.[] | @base64' data/sites.json); do
   _jq '.name'
   echo '-----------------'
 
-  ssh "$(_jq '.host')" "$(_jq '.php') $(_jq '.wpcli') --path=$(_jq '.webroot') --allow-root db export -" | gzip -9c   > exports/$(date +"%Y%m%d-%H%M")-dump-$(_jq '.short').sql.gz
+  ssh "$(_jq '.host')" "$(_jq '.php') $(_jq '.wpcli') --path=$(_jq '.webroot') --allow-root db export -" | zstd -q -o exports/$(date +"%Y%m%d-%H%M")-dump-$(_jq '.short').sql.zst
 
 done
