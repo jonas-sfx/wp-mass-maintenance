@@ -15,5 +15,13 @@ for row in $(jq -r '.[] | @base64' data/sites.json); do
   echo '-----------------'
   _jq '.name'
   echo '-----------------'
-  ssh "$(_jq '.host')" "$(_jq '.php') $(_jq '.wpcli') --path=$(_jq '.webroot') --allow-root theme update --all --dry-run"
+
+  result=$(ssh "$(_jq '.host')" "$(_jq '.php') $(_jq '.wpcli') --path=$(_jq '.webroot') --allow-root theme update --all --dry-run --format=json")
+
+  if jq -e . >/dev/null 2>&1 <<<"$result"; then
+      echo $result | jq
+  else
+      echo "$result"
+  fi
+
 done
