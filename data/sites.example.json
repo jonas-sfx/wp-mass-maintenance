@@ -1,6 +1,7 @@
 [
     {
         "name": "Test",
+        "short": "test",
         "host": "www.test.com",
         "php": "/opt/plesk/php/7.4/bin/php",
         "webroot": "/var/www/vhosts/test.com/httpdocs",
@@ -8,6 +9,7 @@
     },
     {
         "name": "Example",
+        "short": "example",
         "host": "example.net",
         "php": "/usr/local/php7.4/bin/php",
         "webroot": "/home/site123/www.example.net",
@@ -15,6 +17,7 @@
     },
     {
         "name": "Demo",
+        "short": "demo",
         "host": "demo.myhoster.net",
         "php": "/usr/bin/php81",
         "webroot": "/kunden/0815_4711/websites/demo.org",
