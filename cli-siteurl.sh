@@ -7,12 +7,15 @@
 ## =======================================================================
 
 for row in $(jq -r '.[] | @base64' data/sites.json); do
-    _jq() {
-     echo "${row}" | base64 --decode | jq -r "${1}"
-    }
+  _jq() {
+    echo "${row}" | base64 --decode | jq -r "${1}"
+  }
+
   echo
   echo '-----------------'
   _jq '.name'
   echo '-----------------'
+
   ssh "$(_jq '.host')" "$(_jq '.php') $(_jq '.wpcli') --path=\"$(_jq '.webroot')\" --allow-root option get siteurl"
+
 done
